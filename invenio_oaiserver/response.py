@@ -311,7 +311,7 @@ def listrecords(**kwargs):
     result = get_records(**kwargs)
 
     all_records = [record for record in result.items]
-    records_sets = sets_search_all([r["json"]["_source"] for r in all_records])
+    records_sets = current_oaiserver.record_list_sets_fetcher([r["json"]["_source"] for r in all_records])
 
     for index, record in enumerate(all_records):
         pid = current_oaiserver.oaiid_fetcher(record["id"], record["json"]["_source"])
