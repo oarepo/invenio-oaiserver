@@ -44,6 +44,11 @@ class _AppState(object):
         return obj_or_import_string(self.app.config["OAISERVER_RECORD_SETS_FETCHER"])
 
     @property
+    def record_list_sets_fetcher(self):
+        """Get OAI record sets fetcher."""
+        return obj_or_import_string(self.app.config["OAISERVER_RECORD_LIST_SETS_FETCHER"])
+
+    @property
     def record_cls(self):
         """Get the record class for record retrieval."""
         return obj_or_import_string(self.app.config["OAISERVER_RECORD_CLS"])
