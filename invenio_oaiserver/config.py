@@ -130,6 +130,9 @@ OAISERVER_CREATED_KEY = "_created"
 OAISERVER_RECORD_SETS_FETCHER = "invenio_oaiserver.percolator:find_sets_for_record"
 """Record's OAI sets function."""
 
+OAISERVER_RECORD_LIST_SETS_FETCHER = "invenio_oaiserver.percolator:sets_search_all"
+"""Record's list OAI sets function."""
+
 OAISERVER_SET_RECORDS_QUERY_FETCHER = (
     "invenio_oaiserver.fetchers:set_records_query_fetcher"
 )
