@@ -49,6 +49,14 @@ class _AppState(object):
         return obj_or_import_string(self.app.config["OAISERVER_RECORD_LIST_SETS_FETCHER"])
 
     @property
+    def new_percolator_function(self):
+        return obj_or_import_string(self.app.config["OAISERVER_NEW_PERCOLATOR_FUNCTION"])
+
+    @property
+    def delete_percolator_function(self):
+        return obj_or_import_string(self.app.config["OAISERVER_DELETE_PERCOLATOR_FUNCTION"])
+
+    @property
     def record_cls(self):
         """Get the record class for record retrieval."""
         return obj_or_import_string(self.app.config["OAISERVER_RECORD_CLS"])
