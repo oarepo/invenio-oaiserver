@@ -106,6 +106,9 @@ structure.
     in order to ensure compatibility for all your OAI-PMH clients.
 
 """
+OAISERVER_NEW_PERCOLATOR_FUNCTION = "invenio_oaiserver.percolator:_new_percolator"
+
+OAISERVER_DELETE_PERCOLATOR_FUNCTION = "invenio_oaiserver.percolator:_delete_percolator"
 
 OAISERVER_REGISTER_RECORD_SIGNALS = True
 """Catch record/set insert/update/delete signals and update the `_oai`
