@@ -15,15 +15,23 @@ from .proxies import current_oaiserver
 
 def after_insert_oai_set(mapper, connection, target):
     """Update records on OAISet insertion."""
-    current_oaiserver.new_percolator_function(spec=target.spec, search_pattern=target.search_pattern)
+    current_oaiserver.new_percolator_function(
+        spec=target.spec, search_pattern=target.search_pattern
+    )
 
 
 def after_update_oai_set(mapper, connection, target):
     """Update records on OAISet update."""
-    current_oaiserver.delete_percolator_function(spec=target.spec, search_pattern=target.search_pattern)
-    current_oaiserver.new_percolator_function(spec=target.spec, search_pattern=target.search_pattern)
+    current_oaiserver.delete_percolator_function(
+        spec=target.spec, search_pattern=target.search_pattern
+    )
+    current_oaiserver.new_percolator_function(
+        spec=target.spec, search_pattern=target.search_pattern
+    )
 
 
 def after_delete_oai_set(mapper, connection, target):
     """Update records on OAISet deletion."""
-    current_oaiserver.delete_percolator_function(spec=target.spec, search_pattern=target.search_pattern)
+    current_oaiserver.delete_percolator_function(
+        spec=target.spec, search_pattern=target.search_pattern
+    )
