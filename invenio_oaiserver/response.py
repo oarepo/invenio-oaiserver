@@ -16,7 +16,6 @@ from flask import current_app, url_for
 from lxml import etree
 from lxml.etree import Element, ElementTree, SubElement
 
-
 from .models import OAISet
 from .provider import OAIIDProvider
 from .proxies import current_oaiserver
@@ -282,7 +281,9 @@ def listidentifiers(**kwargs):
     result = get_records(**kwargs)
 
     all_records = [record for record in result.items]
-    records_sets = current_oaiserver.record_list_sets_fetcher([r["json"]["_source"] for r in all_records])
+    records_sets = current_oaiserver.record_list_sets_fetcher(
+        [r["json"]["_source"] for r in all_records]
+    )
 
     for index, record in enumerate(all_records):
         pid = current_oaiserver.oaiid_fetcher(record["id"], record["json"]["_source"])
@@ -310,7 +311,9 @@ def listrecords(**kwargs):
     result = get_records(**kwargs)
 
     all_records = [record for record in result.items]
-    records_sets = current_oaiserver.record_list_sets_fetcher([r["json"]["_source"] for r in all_records])
+    records_sets = current_oaiserver.record_list_sets_fetcher(
+        [r["json"]["_source"] for r in all_records]
+    )
 
     for index, record in enumerate(all_records):
         pid = current_oaiserver.oaiid_fetcher(record["id"], record["json"]["_source"])
