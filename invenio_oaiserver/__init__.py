@@ -186,6 +186,6 @@ repository
 from .ext import InvenioOAIServer
 from .proxies import current_oaiserver
 
-__version__ = "3.7.2"
+__version__ = "3.7.2.post1000"
 
 __all__ = ("__version__", "InvenioOAIServer", "current_oaiserver")
